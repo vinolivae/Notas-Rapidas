@@ -1,0 +1,43 @@
+body {
+  height: 100vh;
+  width: auto;
+}
+header {
+  background-color: hsl(310, 75%, 42%);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: #ffffff;
+}
+a{
+    cursor: pointer;
+}
+.notas {
+    display: grid;    
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(233px, 233px));
+    margin: 30px 50px;
+}
+.nota textarea{
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+.nota img{
+  height: 30px;
+  width: 30px;
+}
+.add-button img{
+    height: 60px;
+    width: 60px;
+}
+.save-button img{
+    height: 60px;
+    width: 60px;
+}
+.disabled{
+    cursor: not-allowed;
+}

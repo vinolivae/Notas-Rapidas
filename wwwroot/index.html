@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1>Notas Rápidas</h1>
+      </header>
+    </div>
+    <div>
+      <a class="add-button" onclick="addNota()">
+        <img src="./icons/plus-square-regular.svg" alt="add new note" />
+      </a>
+      <a class="save-button">
+        <img src="./icons/save-regular.svg" alt="add new note" />
+      </a>
+    </div>
+    <div class="notas">
+      <div class="nota">
+        <textarea placeholder="title" name="title" cols="30" rows="1"></textarea>
+        <textarea placeholder="description" name="description" cols="30" rows="10"></textarea>
+        <a><img src="./icons/edit-solid.svg" alt="edit note"></a>
+        <a><img src="./icons/trash-alt-solid.svg" alt="remove note"></a>
+      </div>
+    </div>
+    <script src="./js/note.js"></script>
+  </body>
+</html>
