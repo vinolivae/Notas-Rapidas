@@ -22,16 +22,12 @@ namespace Anotacoes.Controllers
         [Route("")]
         public async Task<ActionResult<Nota>> Create([FromBody] Nota model, [FromServices] DataContext db)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
             db.Notas.Add(model);
             await db.SaveChangesAsync();
             return model;
         }
         [HttpPut]
-        [Route("{id:int}")]
+        [Route("{id}")]
         public async Task<ActionResult<Nota>> Update([FromBody] Nota model, [FromServices] DataContext db, int id){
             if(id != model.Id) return BadRequest();
             db.Entry(model).State = EntityState.Modified;
@@ -39,7 +35,7 @@ namespace Anotacoes.Controllers
             return CreatedAtAction(nameof(ReadAll), new {id = model.Id}, model);
         }
         [HttpDelete]
-        [Route("{id:int}")]
+        [Route("{id}")]
         public async Task<ActionResult<Nota>> Delete([FromServices] DataContext db, int id){
             var nota = await db.Notas.FindAsync(id);
             if(nota == null) return BadRequest();
