@@ -5,8 +5,6 @@ function addNota() {
     const notaDiv = document.createElement('div');
     const titleText = document.createElement('textarea');
     const descriptionText = document.createElement('textarea');
-    const editButton = document.createElement('a');
-    const editButtonImg = document.createElement('img');
     const removeButton = document.createElement('a');
     const removeButtonImg = document.createElement('img');
 
@@ -20,17 +18,13 @@ function addNota() {
     descriptionText.id = 'note-description';
     descriptionText.cols = 30;
     descriptionText.rows = 10;
-    editButton.id = 'note-button';
     removeButton.id = 'note-button';
     removeButton.addEventListener('click', () => removeNota(notaDiv.id));
-    editButtonImg.src = './icons/edit-solid.svg';
     removeButtonImg.src = './icons/trash-alt-solid.svg';
 
-    editButton.appendChild(editButtonImg);
     removeButton.appendChild(removeButtonImg);
     notaDiv.appendChild(titleText);
     notaDiv.appendChild(descriptionText);
-    notaDiv.appendChild(editButton);
     notaDiv.appendChild(removeButton);
     notasDiv.appendChild(notaDiv);
 
@@ -85,8 +79,6 @@ function showNota(nota) {
     const notaDiv = document.createElement('div');
     const titleText = document.createElement('textarea');
     const descriptionText = document.createElement('textarea');
-    const editButton = document.createElement('a');
-    const editButtonImg = document.createElement('img');
     const removeButton = document.createElement('a');
     const removeButtonImg = document.createElement('img');
     
@@ -100,17 +92,13 @@ function showNota(nota) {
     descriptionText.id = 'note-description';
     descriptionText.cols = 30;
     descriptionText.rows = 10;
-    editButton.id = 'note-button';
     removeButton.id = 'note-button';
     removeButton.addEventListener('click', () => removeNota(notaDiv.id));
-    editButtonImg.src = './icons/edit-solid.svg';
     removeButtonImg.src = './icons/trash-alt-solid.svg';
     
-    editButton.appendChild(editButtonImg);
     removeButton.appendChild(removeButtonImg);
     notaDiv.appendChild(titleText);
     notaDiv.appendChild(descriptionText);
-    notaDiv.appendChild(editButton);
     notaDiv.appendChild(removeButton);
     notasDiv.appendChild(notaDiv);
 }
