@@ -49,7 +49,7 @@ function createNota(title, description) {
     .then(response => response.json())
     .catch(error => console.error('Não foi possível criar o item. ', error));
     
-    window.location.reload();
+    //window.location.reload();
 }
 function removeNota(id){
     const nota = document.getElementById(id);
@@ -59,7 +59,7 @@ function removeNota(id){
         method: 'DELETE'
     })
     .catch(error => console.error('não foi possivel deletar o item.', error));
-    window.location.reload();
+    nota.remove();
 }
 function GetAllItems() {
     const param = new URLSearchParams(window.location.search);

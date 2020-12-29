@@ -28,20 +28,22 @@ namespace Anotacoes.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public async Task<ActionResult<Nota>> Update([FromBody] Nota model, [FromServices] DataContext db, int id){
-            if(id != model.Id) return BadRequest();
+        public async Task<ActionResult<Nota>> Update([FromBody] Nota model, [FromServices] DataContext db, int id)
+        {
+            if (id != model.Id) return BadRequest();
             db.Entry(model).State = EntityState.Modified;
             await db.SaveChangesAsync();
-            return CreatedAtAction(nameof(ReadAll), new {id = model.Id}, model);
+            return CreatedAtAction(nameof(ReadAll), new { id = model.Id }, model);
         }
         [HttpDelete]
         [Route("{id}")]
-        public async Task<ActionResult<Nota>> Delete([FromServices] DataContext db, int id){
+        public async Task<ActionResult<Nota>> Delete([FromServices] DataContext db, int id)
+        {
             var nota = await db.Notas.FindAsync(id);
-            if(nota == null) return BadRequest();
+            if (nota == null) return BadRequest();
             db.Notas.Remove(nota);
             await db.SaveChangesAsync();
             return Ok();
         }
     }
-}
+} 
