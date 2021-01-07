@@ -18,6 +18,14 @@ namespace Anotacoes.Controllers
             var nota = await db.Notas.ToListAsync();
             return nota;
         }
+        // [HttpGet]
+        // [Route("{id}")]
+        // public async Task<ActionResult<Nota>> GetById([FromServices] DataContext db, int id)
+        // {
+        //     var nota = await db.Notas.FindAsync(id);
+        //     if(nota.Id != id) return BadRequest();
+        //     return nota;
+        // }
         [HttpPost]
         [Route("")]
         public async Task<ActionResult<Nota>> Create([FromBody] Nota model, [FromServices] DataContext db)
